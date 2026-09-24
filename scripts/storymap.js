@@ -240,10 +240,6 @@ $(window).on('load', function() {
           alt: c['Chapter']
         });
 
-        // Sonderformatierung nur für Niederschlagsgrafik
-        if (c['Media Link'].includes('Niederschlag_Ahrtal_DWD.png')) {
-    media.addClass('niederschlag-bild');
-}
 
         var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
         if (enableLightbox && mediaType === 'img') {
