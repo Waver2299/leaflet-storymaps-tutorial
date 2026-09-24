@@ -174,3 +174,15 @@ h2 {
   font-size: 1.1em;
   font-weight: normal;
 }
+/* Sonderformatierung für das Kapitel Niederschlag */
+#container1 .img-container {
+    height: auto !important;
+    max-height: none !important;
+}
+
+#container1 .img-container img {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+}
