@@ -1,4 +1,4 @@
-# Leaflet Storymaps with Google Sheets
+# Leaflet Storymaps Tutorial about the Ahr Valley flood 2021
 Customize your Leaflet story map with linked Google Sheets template and scrolling narrative.
 Supports images, audio and video embeddings, and Leaflet TileLayer/geojson overlays.
 
