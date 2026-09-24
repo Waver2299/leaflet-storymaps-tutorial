@@ -174,16 +174,8 @@ h2 {
   font-size: 1.1em;
   font-weight: normal;
 }
-/* Sonderformatierung Niederschlagsgrafik */
-.niederschlag-container {
-    height: auto !important;
-    max-height: none !important;
-}
-
-.niederschlag-container img {
-    position: static !important;
-    top: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    height: auto !important;
+/* Nur Bildcontainer im Kapitel "Niederschlag" */
+#container1 .img-container {
+    height: 120px !important;
+    max-height: 120px !important;
 }
