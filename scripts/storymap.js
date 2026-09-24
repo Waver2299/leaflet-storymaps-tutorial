@@ -255,10 +255,6 @@ $(window).on('load', function() {
         mediaContainer = $('<div></div', {
           class: mediaType + '-container'
         }).append(media).after(source);
-        // Sonderfall für die breite Niederschlagsgrafik
-if (c['Media Link'].includes('Niederschlag_Ahrtal_DWD.png')) {
-    mediaContainer.addClass('niederschlag-container');
-}
       }
 
       container
