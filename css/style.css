@@ -174,16 +174,3 @@ h2 {
   font-size: 1.1em;
   font-weight: normal;
 }
-/* Nur die Niederschlagsgrafik */
-.niederschlag-bild {
-    position: static !important;
-    top: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    height: auto !important;
-}
-
-.img-container:has(.niederschlag-bild) {
-    height: auto !important;
-    max-height: none !important;
-}
