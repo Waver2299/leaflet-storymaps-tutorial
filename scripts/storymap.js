@@ -300,19 +300,15 @@ changeAttribution();
     }
     pixelsAbove.push(Number.MAX_VALUE);
 
-    // GEE Vorher-Nachher-Slider
-$('#contents').on('input', '.gee-slider', function() {
+    // Vorher-Nachher-Slider
+$('#contents').on('input', '.image-compare-slider', function() {
 
-  var position = Number($(this).val());
-  var hiddenRight = 100 - position;
+  var position = $(this).val();
 
   $(this)
-    .prev('.gee-compare')
-    .find('.gee-after')
-    .css(
-      'clip-path',
-      'inset(0 ' + hiddenRight + '% 0 0)'
-    );
+    .prev('.image-compare')
+    .find('.image-compare-after')
+    .css('width', position + '%');
 
 });
       
