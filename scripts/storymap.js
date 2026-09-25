@@ -297,17 +297,6 @@ if (i == 9) {
 
 $('#contents').append(container);
 
-    // Vorher-Nachher-Slider steuern
-    $('.image-compare-slider').on('input', function() {
-
-    var position = $(this).val();
-
-    $(this)
-    .prev('.image-compare')
-    .find('.image-compare-after')
-    .css('width', position + '%');
-
-    });
     
     changeAttribution();
 
@@ -327,6 +316,18 @@ $('#contents').append(container);
     }
     pixelsAbove.push(Number.MAX_VALUE);
 
+      // Vorher-Nachher-Slider steuern
+$('#contents').on('input', '.image-compare-slider', function() {
+
+  var position = $(this).val();
+
+  $(this)
+    .prev('.image-compare')
+    .find('.image-compare-after')
+    .css('width', position + '%');
+
+});
+      
     $('div#contents').scroll(function() {
       var currentPosition = $(this).scrollTop();
 
