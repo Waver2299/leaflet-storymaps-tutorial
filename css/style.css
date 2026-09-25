@@ -178,6 +178,6 @@ h2 {
 /*update image container "Regenmenge"*/
 #container1.img-container
 {
-  height: 120px;
-  max-height: 120px;
+  height: 120px !important;
+  max-height: 120px !important;
 }
