@@ -275,7 +275,7 @@ if (i == 10)
       '</div>' +
     '</div>' +
     '<input class="image-compare-slider" type="range" min="0" max="100" value="50">' +
-    '<p class="compare-caption">Abb. 1: RGB-Aufnahmen vor und nach dem Hochwasser.</p>';
+    '<p class="compare-caption">Abb. 7: RGB-Aufnahmen vor und nach dem Hochwasser.</p>';
 
   container.append(compareHTML);
 }
@@ -289,7 +289,7 @@ if (i == 11) {
       '</div>' +
     '</div>' +
     '<input class="image-compare-slider" type="range" min="0" max="100" value="50">' +
-    '<p class="compare-caption">Abb. 2: Falschfarbenaufnahmen vor und nach dem Hochwasser.</p>';
+    '<p class="compare-caption">Abb. 8: Falschfarbenaufnahmen vor und nach dem Hochwasser.</p>';
 
   container.append(compareFalseHTML);
 }
