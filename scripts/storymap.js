@@ -188,7 +188,7 @@ $(window).on('load', function() {
 
     for (i in chapters) {
       var c = chapters[i];
-
+/*
       if (i == 4)
       {
         swipeStarten();
@@ -197,7 +197,7 @@ $(window).on('load', function() {
       {
         swipeBeenden();
       }
-        
+       */ 
       if ( !isNaN(parseFloat(c['Latitude'])) && !isNaN(parseFloat(c['Longitude']))) {
         var lat = parseFloat(c['Latitude']);
         var lon = parseFloat(c['Longitude']);
