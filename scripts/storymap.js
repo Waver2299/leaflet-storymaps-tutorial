@@ -265,18 +265,20 @@ $(window).on('load', function() {
   .append('<p class="description">' + c['Description'] + '</p>');
 
 // Vorher-Nachher-Vergleich in Kapitel 10
-if (i == 9) {
+if (i == 9)
+{
 
   var compareHTML =
-    '<div class="gee-compare">' +
-      '<img class="gee-before" src="media/Pre_RGB.png" alt="Vor dem Hochwasser">' +
-      '<img class="gee-after" src="media/Post_RGB.png" alt="Nach dem Hochwasser">' +
+    '<div class="image-compare">' +
+      '<img src="media/Pre_RGB.png" alt="Vor dem Hochwasser">' +
+      '<div class="image-compare-after">' +
+        '<img src="media/Post_RGB.png" alt="Nach dem Hochwasser">' +
+      '</div>' +
     '</div>' +
-    '<input class="gee-slider" type="range" min="0" max="100" value="50">';
+    '<input class="image-compare-slider" type="range" min="0" max="100" value="50">';
 
   container.append(compareHTML);
 }
-
 $('#contents').append(container);
 
 } // Ende: for (i in chapters)
