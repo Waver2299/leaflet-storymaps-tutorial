@@ -264,7 +264,7 @@ $(window).on('load', function() {
   .append(media ? source : '')
   .append('<p class="description">' + c['Description'] + '</p>');
 
-// Vorher-Nachher-Vergleich
+// Vorher-Nachher-Vergleich in Kapitel 10 (also i ==9)
 if (i == 9) {
 
   var compareHTML =
