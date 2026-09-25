@@ -166,7 +166,7 @@ $(window).on('load', function() {
       swipeVorher = L.imageOverlay('media/Pre_RGB.png', swipeBounds).addTo(map);
       swipeNachher = L.imageOverlay('media/Post_RGB.png', swipeBounds).addTo(map);
       swipeControl = L.control.sideBySide(swipeVorher,swipeNachher).addTo(map);
-      map.fitBounds(swipeBounds);
+      //map.fitBounds(swipeBounds);
       swipeAktiv = true;
     }
 
@@ -188,16 +188,7 @@ $(window).on('load', function() {
 
     for (i in chapters) {
       var c = chapters[i];
-/*
-      if (i == 4)
-      {
-        swipeStarten();
-      }
-      else
-      {
-        swipeBeenden();
-      }
-       */ 
+
       if ( !isNaN(parseFloat(c['Latitude'])) && !isNaN(parseFloat(c['Longitude']))) {
         var lat = parseFloat(c['Latitude']);
         var lon = parseFloat(c['Longitude']);
@@ -372,6 +363,15 @@ $(window).on('load', function() {
 
           var c = chapters[i];
 
+          if (i == 4)
+          {
+            swipeStarten();
+          }
+          else
+          {
+            swipeBeenden();
+          }
+          
           // Add chapter's overlay tiles if specified in options
           if (c['Overlay']) {
 
