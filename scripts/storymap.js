@@ -264,17 +264,15 @@ $(window).on('load', function() {
   .append(media ? source : '')
   .append('<p class="description">' + c['Description'] + '</p>');
 
-// Vorher-Nachher-Vergleich in Kapitel 10 (also i ==9)
+// Vorher-Nachher-Vergleich in Kapitel 10
 if (i == 9) {
 
   var compareHTML =
-    '<div class="image-compare">' +
-      '<img src="media/Pre_RGB.png" alt="Vor dem Hochwasser">' +
-      '<div class="image-compare-after">' +
-        '<img src="media/Post_RGB.png" alt="Nach dem Hochwasser">' +
-      '</div>' +
+    '<div class="gee-compare">' +
+      '<img class="gee-before" src="media/Pre_RGB.png" alt="Vor dem Hochwasser">' +
+      '<img class="gee-after" src="media/Post_RGB.png" alt="Nach dem Hochwasser">' +
     '</div>' +
-    '<input class="image-compare-slider" type="range" min="0" max="100" value="50">';
+    '<input class="gee-slider" type="range" min="0" max="100" value="50">';
 
   container.append(compareHTML);
 }
@@ -300,15 +298,19 @@ changeAttribution();
     }
     pixelsAbove.push(Number.MAX_VALUE);
 
-      // Vorher-Nachher-Slider steuern
-$('#contents').on('input', '.image-compare-slider', function() {
+    // GEE Vorher-Nachher-Slider
+$('#contents').on('input', '.gee-slider', function() {
 
-  var position = $(this).val();
+  var position = Number($(this).val());
+  var hiddenRight = 100 - position;
 
   $(this)
-    .prev('.image-compare')
-    .find('.image-compare-after')
-    .css('width', position + '%');
+    .prev('.gee-compare')
+    .find('.gee-after')
+    .css(
+      'clip-path',
+      'inset(0 ' + hiddenRight + '% 0 0)'
+    );
 
 });
       
