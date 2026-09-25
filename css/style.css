@@ -182,56 +182,49 @@ h2 {
   max-height: 120px !important;
 }
 
-/* =========================================
-   GEE Vorher-Nachher-Vergleich
-   ========================================= */
+/* Vorher-Nachher Bildvergleich */
 
-.gee-compare {
+.image-compare {
   position: relative;
   width: 100%;
+  overflow: hidden;
   margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+/* Unteres Bild */
+.image-compare > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Fenster für das obere Bild */
+.image-compare-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 50%;
+  height: 100%;
+
   overflow: hidden;
 }
 
-/*
- * Das Vorher-Bild bleibt im normalen Dokumentfluss.
- * Dadurch bestimmt DAS BILD selbst die Höhe des Containers.
- */
-.gee-before {
-  display: block !important;
-  position: relative !important;
+/* Oberes Bild */
+.image-compare-after img {
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  width: 100% !important;
-  height: auto !important;
+  width: auto;
+  height: 100%;
 
-  margin: 0 !important;
-  padding: 0 !important;
-  max-width: 100% !important;
+  max-width: none;
 }
 
-/*
- * Das Nachher-Bild liegt exakt über dem Vorher-Bild.
- */
-.gee-after {
-  display: block !important;
-  position: absolute !important;
-
-  top: 0 !important;
-  left: 0 !important;
-
-  width: 100% !important;
-  height: 100% !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  object-fit: fill !important;
-
-  /* Anfangs 50 % sichtbar */
-  clip-path: inset(0 50% 0 0);
-}
-
-.gee-slider {
+/* Slider */
+.image-compare-slider {
   display: block;
   width: 100%;
   margin: 8px 0 15px 0;
