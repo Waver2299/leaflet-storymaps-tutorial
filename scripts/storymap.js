@@ -267,7 +267,6 @@ $(window).on('load', function() {
 // Vorher-Nachher-Vergleich in Kapitel 10
 if (i == 10)
 {
-
   var compareHTML =
     '<div class="image-compare">' +
       '<img src="media/Post_RGB.png" alt="Nach dem Hochwasser">' +
@@ -276,13 +275,12 @@ if (i == 10)
       '</div>' +
     '</div>' +
     '<input class="image-compare-slider" type="range" min="0" max="100" value="50">' +
-    '<p class="compare-caption">Abb. 7: Satellitenaufnahme vor und nach dem Hochwasser (eigene Darstellung.</p>;
+    '<p class="compare-caption">Abb. 1: RGB-Aufnahmen vor und nach dem Hochwasser.</p>';
 
   container.append(compareHTML);
 }
       // False-Color Vorher-Nachher-Vergleich in Kapitel 11
 if (i == 11) {
-
   var compareFalseHTML =
     '<div class="image-compare">' +
       '<img src="media/Post_False.png" alt="Nach dem Hochwasser - False Color">' +
@@ -291,10 +289,11 @@ if (i == 11) {
       '</div>' +
     '</div>' +
     '<input class="image-compare-slider" type="range" min="0" max="100" value="50">' +
-    '<p class="compare-caption">Abb. 8: Falschfarbenaufnahme vor und nach dem Hochwasser (eigene Darstellung.</p>;
+    '<p class="compare-caption">Abb. 2: Falschfarbenaufnahmen vor und nach dem Hochwasser.</p>';
 
   container.append(compareFalseHTML);
 }
+      
 $('#contents').append(container);
 
 } // Ende: for (i in chapters)
