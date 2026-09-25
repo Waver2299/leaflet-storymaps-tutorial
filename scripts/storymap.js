@@ -146,45 +146,96 @@ $(window).on('load', function() {
     var overlay;  // URL of the overlay for in-focus chapter
     var geoJsonOverlay;
 
-    //Swipe function
-    var swipeVorher;
-    var swipeNachher;
-    var swipeControl;
-    var swipeAktiv = false;
-    var swipeBounds =
-      [
-        [50.5334928, 7.0799612],
-        [50.5764961, 7.1700220]
-        ];
-    function swipeStarten()
-    {
-      if (swipeAktiv)
-      {
-        return;
-      }
+    // Swipe function
+var swipeVorher;
+var swipeNachher;
+var swipeSlider;
+var swipeAktiv = false;
 
-      swipeVorher = L.imageOverlay('media/Pre_RGB.png', swipeBounds).addTo(map);
-      swipeNachher = L.imageOverlay('media/Post_RGB.png', swipeBounds).addTo(map);
-      swipeControl = L.control.sideBySide(swipeVorher,swipeNachher).addTo(map);
-      //map.fitBounds(swipeBounds);
-      swipeAktiv = true;
+var swipeBounds = [
+  [50.5334928, 7.0799612],
+  [50.5764961, 7.1700220]
+];
+
+function swipeStarten() {
+
+  if (swipeAktiv) {
+    return;
+  }
+
+  // Beide Bilder auf die Karte legen
+  swipeVorher = L.imageOverlay(
+    'media/Pre_RGB.png',
+    swipeBounds
+  ).addTo(map);
+
+  swipeNachher = L.imageOverlay(
+    'media/Post_RGB.png',
+    swipeBounds
+  ).addTo(map);
+
+  // Slider erstellen
+  swipeSlider = document.createElement('input');
+  swipeSlider.type = 'range';
+  swipeSlider.min = 0;
+  swipeSlider.max = 100;
+  swipeSlider.value = 50;
+
+  // Slider über der Karte positionieren
+  swipeSlider.style.position = 'absolute';
+  swipeSlider.style.left = '10%';
+  swipeSlider.style.bottom = '30px';
+  swipeSlider.style.width = '80%';
+  swipeSlider.style.zIndex = '1000';
+
+  map.getContainer().appendChild(swipeSlider);
+
+  // Bild entsprechend der Sliderposition abschneiden
+  function swipeAktualisieren() {
+
+    var image = swipeNachher.getElement();
+
+    if (!image) {
+      return;
     }
 
-    function swipeBeenden()
-    {
-      if (!swipeAktiv)
-      {
-        return;
-      }
-      map.removeControl(swipeControl);
-      map.removeLayer(swipeVorher);
-      map.removeLayer(swipeNachher);
+    var position = swipeSlider.value;
 
-      swipeControl = null;
-      swipeVorher = null;
-      swipeNachher = null;
-      swipeAktiv = false;
-    }
+    image.style.clipPath =
+      'inset(0 ' + (100 - position) + '% 0 0)';
+  }
+
+  swipeSlider.addEventListener('input', swipeAktualisieren);
+
+  // Start bei 50 / 50
+  swipeAktualisieren();
+
+  swipeAktiv = true;
+}
+
+function swipeBeenden() {
+
+  if (!swipeAktiv) {
+    return;
+  }
+
+  if (swipeVorher) {
+    map.removeLayer(swipeVorher);
+  }
+
+  if (swipeNachher) {
+    map.removeLayer(swipeNachher);
+  }
+
+  if (swipeSlider) {
+    swipeSlider.remove();
+  }
+
+  swipeVorher = null;
+  swipeNachher = null;
+  swipeSlider = null;
+  swipeAktiv = false;
+}
 
     for (i in chapters) {
       var c = chapters[i];
