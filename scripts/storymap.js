@@ -275,7 +275,8 @@ if (i == 10)
         '<img src="media/Pre_RGB.png" alt="Vor dem Hochwasser">' +
       '</div>' +
     '</div>' +
-    '<input class="image-compare-slider" type="range" min="0" max="100" value="50">';
+    '<input class="image-compare-slider" type="range" min="0" max="100" value="50">' +
+    '<p class="compare-caption">Abb. 7: Satellitenaufnahme vor und nach dem Hochwasser (eigene Darstellung.</p>;
 
   container.append(compareHTML);
 }
@@ -289,7 +290,8 @@ if (i == 11) {
         '<img src="media/Pre_False.png" alt="Vor dem Hochwasser - False Color">' +
       '</div>' +
     '</div>' +
-    '<input class="image-compare-slider" type="range" min="0" max="100" value="50">';
+    '<input class="image-compare-slider" type="range" min="0" max="100" value="50">' +
+    '<p class="compare-caption">Abb. 8: Falschfarbenaufnahme vor und nach dem Hochwasser (eigene Darstellung.</p>;
 
   container.append(compareFalseHTML);
 }
