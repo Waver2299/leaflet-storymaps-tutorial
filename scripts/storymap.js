@@ -259,15 +259,56 @@ $(window).on('load', function() {
       }
 
       container
-        .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
-        .append(media ? mediaContainer : '')
-        .append(media ? source : '')
-        .append('<p class="description">' + c['Description'] + '</p>');
+  .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
+  .append(media ? mediaContainer : '')
+  .append(media ? source : '')
+  .append('<p class="description">' + c['Description'] + '</p>');
 
-      $('#contents').append(container);
 
-    }
+// Vorher-Nachher-Vergleich nur in Kapitel 5
+if (i == 9) {
 
+  var compareHTML = `
+    <div class="image-compare">
+
+      <img
+        src="media/Pre_RGB.png"
+        alt="Vor dem Hochwasser">
+
+      <div class="image-compare-after">
+        <img
+          src="media/Post_RGB.png"
+          alt="Nach dem Hochwasser">
+      </div>
+
+    </div>
+
+    <input
+      class="image-compare-slider"
+      type="range"
+      min="0"
+      max="100"
+      value="50">
+  `;
+
+  container.append(compareHTML);
+}
+
+
+$('#contents').append(container);
+
+    // Vorher-Nachher-Slider steuern
+    $('.image-compare-slider').on('input', function() {
+
+    var position = $(this).val();
+
+    $(this)
+    .prev('.image-compare')
+    .find('.image-compare-after')
+    .css('width', position + '%');
+
+    });
+    
     changeAttribution();
 
     /* Change image container heights */
