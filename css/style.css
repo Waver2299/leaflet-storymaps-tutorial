@@ -191,12 +191,14 @@ h2 {
   margin-bottom: 8px;
 }
 
+/* Unteres Bild bestimmt die Höhe des Containers */
 .image-compare > img {
   display: block;
   width: 100%;
   height: auto;
 }
 
+/* Post-Bild liegt darüber */
 .image-compare-after {
   position: absolute;
   top: 0;
@@ -206,18 +208,18 @@ h2 {
   overflow: hidden;
 }
 
+/* Das obere Bild hat exakt dieselbe Größe wie das untere */
 .image-compare-after img {
   position: absolute;
   top: 0;
   left: 0;
-
-  /* Wichtig: gleiche Breite wie das gesamte Vergleichsfeld */
-  width: 100vw;
   max-width: none;
-  height: auto;
+  height: 100%;
+  width: auto;
 }
 
 .image-compare-slider {
+  display: block;
   width: 100%;
   margin: 0 0 15px 0;
 }
