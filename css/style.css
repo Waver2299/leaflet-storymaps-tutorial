@@ -186,36 +186,52 @@ h2 {
 .image-compare {
   position: relative;
   width: 100%;
+  aspect-ratio: 256 / 181;
   overflow: hidden;
-  margin-top: 15px;
-  margin-bottom: 8px;
+  margin: 15px 0 8px 0;
 }
 
-/* Unteres Bild bestimmt die Höhe des Containers */
-.image-compare > img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* Post-Bild liegt darüber */
-.image-compare-after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-}
-
-/* Das obere Bild hat exakt dieselbe Größe wie das untere */
+/* Beide Bilder haben exakt dieselbe Größe */
+.image-compare > img,
 .image-compare-after img {
   position: absolute;
   top: 0;
   left: 0;
-  max-width: none;
+
+  width: 100%;
   height: 100%;
-  width: auto;
+
+  object-fit: contain;
+  object-position: top left;
+
+  max-width: none;
+}
+
+.image-compare > img {
+  z-index: 1;
+}
+
+/* Sichtbares Fenster für Post_RGB */
+.image-compare-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 50%;
+  height: 100%;
+
+  overflow: hidden;
+  z-index: 2;
+}
+
+/*
+Das Post-Bild muss die Größe des gesamten Vergleichsfeldes
+behalten, obwohl sein Elterncontainer abgeschnitten wird.
+*/
+.image-compare-after img {
+  width: calc(100% * 2);
+  height: 100%;
+  object-fit: fill;
 }
 
 .image-compare-slider {
