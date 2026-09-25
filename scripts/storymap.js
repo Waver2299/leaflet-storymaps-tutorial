@@ -279,6 +279,20 @@ if (i == 9)
 
   container.append(compareHTML);
 }
+      // False-Color Vorher-Nachher-Vergleich in Kapitel 11
+if (i == 10) {
+
+  var compareFalseHTML =
+    '<div class="image-compare">' +
+      '<img src="media/Pre_False.png" alt="Vor dem Hochwasser - False Color">' +
+      '<div class="image-compare-after">' +
+        '<img src="media/Post_False.png" alt="Nach dem Hochwasser - False Color">' +
+      '</div>' +
+    '</div>' +
+    '<input class="image-compare-slider" type="range" min="0" max="100" value="50">';
+
+  container.append(compareFalseHTML);
+}
 $('#contents').append(container);
 
 } // Ende: for (i in chapters)
