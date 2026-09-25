@@ -265,7 +265,7 @@ $(window).on('load', function() {
   .append('<p class="description">' + c['Description'] + '</p>');
 
 // Vorher-Nachher-Vergleich
-if (i == 9) {
+if (i == 8) {
 
   var compareHTML =
     '<div class="image-compare">' +
