@@ -163,10 +163,10 @@ $(window).on('load', function() {
         return;
       }
 
-      swipeVorher = L.imageOverlay('media/Ahr_Pre_RGB.png', swipeBounds).addTo(map);
-      swipeNachher = L.imageOverlay('media/Ahr_Post_RGB.png', swipeBounds).addTo(map);
+      swipeVorher = L.imageOverlay('media/Pre_RGB.png', swipeBounds).addTo(map);
+      swipeNachher = L.imageOverlay('media/Post_RGB.png', swipeBounds).addTo(map);
       swipeControl = L.control.sideBySide(swipeVorher,swipeNachher).addTo(map);
-      map.fitbounds(swipeBounds);
+      map.fitBounds(swipeBounds);
       swipeAktiv = true;
     }
 
@@ -189,6 +189,15 @@ $(window).on('load', function() {
     for (i in chapters) {
       var c = chapters[i];
 
+      if (i == 4)
+      {
+        swipeStarten();
+      }
+      else
+      {
+        swipeBeenden();
+      }
+        
       if ( !isNaN(parseFloat(c['Latitude'])) && !isNaN(parseFloat(c['Longitude']))) {
         var lat = parseFloat(c['Latitude']);
         var lon = parseFloat(c['Longitude']);
