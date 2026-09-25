@@ -181,3 +181,38 @@ h2 {
   height: 120px !important;
   max-height: 120px !important;
 }
+/* Vorher-Nachher Bildvergleich */
+
+.image-compare {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.image-compare img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-compare-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-compare-after img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+
+.image-compare-slider {
+  width: 100%;
+  margin-top: 8px;
+}
