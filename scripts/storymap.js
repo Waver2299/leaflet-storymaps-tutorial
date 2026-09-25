@@ -264,42 +264,26 @@ $(window).on('load', function() {
   .append(media ? source : '')
   .append('<p class="description">' + c['Description'] + '</p>');
 
-
-// Vorher-Nachher-Vergleich nur in Kapitel 5
+// Vorher-Nachher-Vergleich
 if (i == 9) {
 
-  var compareHTML = `
-    <div class="image-compare">
-
-      <img
-        src="media/Pre_RGB.png"
-        alt="Vor dem Hochwasser">
-
-      <div class="image-compare-after">
-        <img
-          src="media/Post_RGB.png"
-          alt="Nach dem Hochwasser">
-      </div>
-
-    </div>
-
-    <input
-      class="image-compare-slider"
-      type="range"
-      min="0"
-      max="100"
-      value="50">
-  `;
+  var compareHTML =
+    '<div class="image-compare">' +
+      '<img src="media/Pre_RGB.png" alt="Vor dem Hochwasser">' +
+      '<div class="image-compare-after">' +
+        '<img src="media/Post_RGB.png" alt="Nach dem Hochwasser">' +
+      '</div>' +
+    '</div>' +
+    '<input class="image-compare-slider" type="range" min="0" max="100" value="50">';
 
   container.append(compareHTML);
 }
 
-
 $('#contents').append(container);
-    }
-    
-    changeAttribution();
 
+} // Ende: for (i in chapters)
+
+changeAttribution();
     /* Change image container heights */
     imgContainerHeight = parseInt(getSetting('_imgContainerHeight'));
     if (imgContainerHeight > 0) {
