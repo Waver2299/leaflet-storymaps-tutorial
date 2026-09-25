@@ -363,7 +363,7 @@ $(window).on('load', function() {
 
           var c = chapters[i];
 
-          if (i == 4)
+          if (i == 9)
           {
             swipeStarten();
           }
