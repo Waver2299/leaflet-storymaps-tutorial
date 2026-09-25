@@ -296,7 +296,7 @@ if (i == 9) {
 
 
 $('#contents').append(container);
-
+    }
     
     changeAttribution();
 
