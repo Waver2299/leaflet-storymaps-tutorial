@@ -146,6 +146,46 @@ $(window).on('load', function() {
     var overlay;  // URL of the overlay for in-focus chapter
     var geoJsonOverlay;
 
+    //Swipe function
+    var swipeVorher;
+    var swipeNachher;
+    var swipeControl;
+    var swipeAktiv = false;
+    var swipeBounds =
+      [
+        [50.5334928, 7.0799612],
+        [50.5764961, 7.1700220]
+        ];
+    function swipeStarten()
+    {
+      if (swipeAktiv)
+      {
+        return;
+      }
+
+      swipeVorher = L.imageOverlay('media/Ahr_Pre_RGB.png', swipeBounds).addTo(map);
+      swipeNachher = L.imageOverlay('media/Ahr_Post_RGB.png', swipeBounds).addTo(map);
+      swipeControl = L.control.sideBySide(swipeVorher,swipeNachher).addTo(map);
+      map.fitbounds(swipeBounds);
+      swipeAktiv = true;
+    }
+
+    function swipeBeenden()
+    {
+      if (!swipeAktiv)
+      {
+        return;
+      }
+      map.removeControl(swipeControl);
+      map.removeLayer(swipeVorher);
+      map.removeLayer(swipeNachher);
+
+      swipeControl = null;
+      swipeVorher = null;
+      swipeNachher = null;
+      swipeAktiv = false;
+    }
+
     for (i in chapters) {
       var c = chapters[i];
 
