@@ -304,26 +304,11 @@ changeAttribution();
 $('#contents').on('input', '.image-compare-slider', function() {
 
   var position = $(this).val();
-  var compare = $(this).prev('.image-compare');
-  var after = compare.find('.image-compare-after');
 
-  // obere Bildhälfte abschneiden
-  after.css('width', position + '%');
-
-  // Post-Bild immer exakt so breit wie das Pre-Bild halten
-  after.find('img').css(
-    'width',
-    compare.width() + 'px'
-  );
-
-});
-    $('.image-compare').each(function() {
-
-  var compare = $(this);
-
-  compare
-    .find('.image-compare-after img')
-    .css('width', compare.width() + 'px');
+  $(this)
+    .prev('.image-compare')
+    .find('.image-compare-after')
+    .css('width', position + '%');
 
 });
       
