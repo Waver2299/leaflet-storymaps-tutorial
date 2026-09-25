@@ -188,10 +188,10 @@ h2 {
   width: 100%;
   overflow: hidden;
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
-.image-compare img {
+.image-compare > img {
   display: block;
   width: 100%;
   height: auto;
@@ -207,12 +207,17 @@ h2 {
 }
 
 .image-compare-after img {
-  height: 100%;
-  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* Wichtig: gleiche Breite wie das gesamte Vergleichsfeld */
+  width: 100vw;
   max-width: none;
+  height: auto;
 }
 
 .image-compare-slider {
   width: 100%;
-  margin-top: 8px;
+  margin: 0 0 15px 0;
 }
