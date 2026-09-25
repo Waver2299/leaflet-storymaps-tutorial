@@ -265,7 +265,7 @@ $(window).on('load', function() {
   .append('<p class="description">' + c['Description'] + '</p>');
 
 // Vorher-Nachher-Vergleich in Kapitel 10
-if (i == 9)
+if (i == 10)
 {
 
   var compareHTML =
@@ -280,7 +280,7 @@ if (i == 9)
   container.append(compareHTML);
 }
       // False-Color Vorher-Nachher-Vergleich in Kapitel 11
-if (i == 10) {
+if (i == 11) {
 
   var compareFalseHTML =
     '<div class="image-compare">' +
