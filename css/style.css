@@ -14,6 +14,8 @@ body {
   left: 0;
 }
 
+/*Gestaltung des Bereichs, in welchem die einzelnen Storykapitel angezeigt werden*/
+
 #narration {
   position: absolute;
   top: 203px;
